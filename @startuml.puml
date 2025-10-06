@@ -1,0 +1,30 @@
+@startuml
+title Sprint 0 Burndown (Story Points) — ASCII (works everywhere)
+
+' Legend:
+'  - Planned: the straight line
+'  - Actual : the X markers
+' Edit guide:
+'  - Total SP in this sample = 20
+'  - Days = D0..D7 (1 week)
+'  - Move the X markers to reflect your actual remaining points per day.
+
+ditaa
+  +--------------------------------------------------------------------+
+  | Remaining Story Points                                             |
+  | 20|* Planned                                                       |
+  |   | \                                                              |
+  | 18|  \               Actual                                        |
+  | 16|   \            X                                               |
+  | 14|    \         X                                                 |
+  | 12|     \      X                                                   |
+  | 10|      \    X                                                    |
+  |  8|       \  X                                                     |
+  |  6|        \X                                                      |
+  |  4|          \                                                     |
+  |  2|           \                                                    |
+  |  0|------------+----+----+----+----+----+----+----+----------------|
+  |                D0   D1   D2   D3   D4   D5   D6   D7  (Days)       |
+  +--------------------------------------------------------------------+
+end ditaa
+@enduml

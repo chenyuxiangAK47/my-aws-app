@@ -20,3 +20,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             bash ~/deploy.sh
+            pm2 ls
+            pm2 logs api --lines 50

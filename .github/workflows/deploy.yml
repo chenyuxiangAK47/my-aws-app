@@ -2,8 +2,7 @@ name: Deploy to EC2
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -18,7 +17,11 @@ jobs:
           host: 13.238.255.17
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
+          command_timeout: 5m
           script: |
             bash ~/deploy.sh
             pm2 ls
-            pm2 logs api --lines 50
+            # 只打印日志，不进入流式跟随
+            pm2 logs api --lines 50 --nostream
+            # 可选：也把 Nginx 错误日志打印下（不挂机）
+            sudo tail -n 50 /var/log/nginx/error.log || true
